@@ -1,0 +1,95 @@
+@import "compass";
+
+$content_margin_right: 280px;
+
+.content {
+  margin-left: 100px !important;
+  margin-right: $content_margin_right;
+  margin-bottom: 15px;
+  margin-top: 31px;
+
+
+  .inner {
+    background: white;
+    min-height: 400px;
+    @include border-radius(0px);
+    @include box-shadow(2px 0px 15px rgba(0, 0, 0, 0.4));
+    border-left: 1px solid #1D1E21;
+    position: relative;
+
+    .items {
+      article {
+        padding: 13px 0 0 40px;
+        overflow: hidden;
+        position: relative;
+
+        .title {
+          font-weight: bold;
+        }
+
+        .mini-icon {
+          position: absolute;
+          top: 17px;
+          left: 10px;
+          width: 16px;
+          font-size: 16px;
+          height: 16px;
+          padding: 3px;
+          color: white;
+          color: rgba(255, 255, 255, 0.9);
+          text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+          background: #AAA;
+          @include border-radius(2px);
+          background: #489D00;
+          vertical-align: middle;
+          text-align: center;
+          font-size: 18px;
+          font-weight: normal;
+          line-height: 16px;
+          font-style: normal;
+          font-variant: normal;
+          -webkit-font-smoothing: antialiased;
+        }
+        .body {
+          border-bottom: 1px solid #CCC;
+          overflow: hidden;
+          padding: 0 0 1em 0;
+          .title {
+            padding: 0 0 .25em 0;
+          }
+
+          .actions {
+            margin-top: 5px;
+            margin-left: 48px;
+            a {
+              margin-right: 10px;
+            }
+          }
+
+          .gravatar {
+            border: 1px solid #D0D0D0;
+            padding: 2px;
+            background-color: white;
+            float: left;
+            line-height: 0;
+            margin-right: .7em;
+            img {
+              max-width: 30px;
+              height: 30px;
+            }
+          }
+
+          blockquote {
+            margin: 0px;
+            padding: 0px;
+            color: #666;
+            border: 0px;
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+
+}
+

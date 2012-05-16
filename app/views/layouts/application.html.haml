@@ -1,0 +1,57 @@
+!!!
+%html
+  %head
+    %title BM
+    = csrf_meta_tags
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+
+  %body{ class: ["controller_#{controller.controller_name}", "action_#{controller.action_name}"].join(" ") }
+    .kit
+      .logo
+        %a{ href: "#" } 
+          %i.icon-cog
+          Ustawienia
+      %nav
+        = link_to '#' do
+          %i.icon-th-list
+          Sortowanie: Brak
+        = link_to '#' do
+          %i.icon-search
+          Filtrowanie: Brak
+        
+        = link_to '#'do
+          %i.icon-download-alt
+          Eksportuj
+    %ul.unstyled.menu
+      %li.active
+        = link_to "#"do
+          = image_tag "wallet.png"
+          %br/
+          Transakcje
+        .arrow
+      %li
+        = link_to "#" do
+          = image_tag "credit-card.png"
+          %br/
+          Konta
+        .arrow
+      %li
+        = link_to "#" do
+          = image_tag "chart_organisation.png"
+          %br/
+          Budżet
+      %li
+        = link_to "#" do
+          = image_tag "chart_bar.png"
+          %br/
+          Wykresy
+      %li
+        = link_to "#" do
+          = image_tag "box_down.png"
+          %br/
+          Więcej
+    .content
+      = yield
+
+

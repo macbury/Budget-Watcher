@@ -1,0 +1,13 @@
+body {
+  background: #303038 image-url('lines.jpg') repeat fixed;
+  margin-top: 15px;
+}
+
+body, html {
+  min-width: 960px;
+  height: 100%;
+}
+
+.clear {
+  clear: both;
+}

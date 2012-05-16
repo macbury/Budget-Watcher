@@ -1,0 +1,69 @@
+@import "compass";
+
+.sidebar {
+  position: fixed;
+  overflow: hidden;
+  top: 30px;
+  right: 0px;
+  bottom: 0px;
+  width: 260px;
+  color: white;
+  font-size: 10px;
+  h3 {
+    margin: 0px;
+    @include box-shadow(0px 1px 0px rgba(255, 255, 255, 0.2));
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+    padding: 14px 0px 5px 0px;
+    margin-bottom: 14px;
+    
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  }
+
+  .progress {
+    background-color: #202328;
+    @include background-image(linear-gradient(top, #202328, #202328));
+    @include box-shadow(inset 1px 1px 1px rgba(0, 0, 0, 0.5));
+    margin: 0px;
+  }
+
+  .block {
+    margin-right: 10px;
+  }
+
+  .timelineScrubber {
+    font-size: 12px;
+    margin: 0px;
+
+    .active a {
+      border-left-color: orange;
+      color: orange;
+      font-weight: bold;
+    }
+
+    li {
+      margin-bottom: 1px;
+
+      .badge {
+        float: right;
+        margin-top: 4px;
+        margin-right: 4px;
+      }
+
+      &:nth-child(even) {
+        background: rgba(255,255,255, 0.05);
+      }
+      
+      a {
+        border-left: 5px solid #4A4A54;
+        color: #fff;
+        display: block;
+        font-weight: normal;
+        outline: none;
+        padding: 4px 0 4px 6px;
+      }
+    }
+  }
+}

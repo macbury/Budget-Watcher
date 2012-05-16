@@ -1,0 +1,72 @@
+.sidebar
+  .block
+    .btn-group{ style: "margin-top: 20px;" }
+      %a.btn.btn-success{ href: "#" } 
+        %i.icon-plus.icon-white
+        Dodaj transakcje
+      %a.btn.btn-info{ href: "#" } 
+        %i.icon-upload.icon-white
+        Importuj
+  %h3= t("transactions.sidebar.budget.h3", default: "Budżet na %{month}", month: l(Date.current, format: :medium) )
+  .block
+    Wydałeś 0,00 zł (0%) z 867,00 zł
+    .progress.active.progress-warning
+      .bar{ :style => "width: 40%" }
+  %h3= t("transactions.sidebar.accounts.h3", default: "Moje Konta")
+  .block
+    %ul.timelineScrubber.unstyled
+      %li.active= link_to "Wszystko", '#'
+      - self.current_user.accounts.each do |account|
+        %li
+          %span.badge.badge-success= number_to_currency account.balance
+          = link_to account.name, '#'
+
+  %h3= t("transactions.sidebar.filter.h3", default: "Moje filtry")
+  .block
+    %ul.timelineScrubber.unstyled
+      %li.active= link_to "Wszystko", '#'
+      %li= link_to "Duże wydatki na ten miesiąc", '#'
+      %li= link_to "Małe wydatki na ten miesiąc", '#'
+      %li= link_to "Ile wydałem na jedzenie", '#'
+.inner.inner-relative
+  .items
+    - 100.times do |index|
+      %article
+        .body
+          %span.icon-upload.mini-icon
+          .title
+            = link_to "arek", '#'
+            wpłacił
+            %span{ style: "color: green" } + 30,00 zł
+            na konto
+            = link_to "@bankomat", '#'
+            %b= distance_of_time_in_words_to_now index.minutes.ago
+            temu przez
+            = link_to "www", '#'
+          .details
+            .gravatar= image_tag "https://secure.gravatar.com/avatar/f3635b9ab7ea5d7678dd7a8e3131e3ba?s=140"
+            .message 
+              %blockquote DotPay ul. Wielicka 72 Kraków 30-552  78124045331111001032873655
+            .actions
+              .pull-right
+                = link_to "#" do
+                  %i.icon-map-marker
+                  Pokaż na mapie
+                = link_to "#" do
+                  %i.icon-comment
+                  Komentarze
+              = link_to '#' do
+                %i.icon-tag
+                Przypisz kategorię
+              = link_to "#" do
+                %i.icon-edit
+                Edytuj
+              = link_to "#" do
+                %i.icon-trash
+                Usuń
+
+
+    .clear
+            
+
+

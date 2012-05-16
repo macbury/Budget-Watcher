@@ -1,0 +1,1 @@
+thin stop; thin start -p 5001 --ssl -d
